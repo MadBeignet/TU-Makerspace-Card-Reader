@@ -15,6 +15,7 @@
   --page-text: black;
   --box-shadow-color: #01674f;
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --button-background: linear-gradient(90deg, #19624b 0%, #136c51 50%, #0a6d4e 100%);
@@ -23,7 +24,7 @@
     --button-text-color: rgb(199, 239, 219);
     --button-text-color-hover: rgb(248, 255, 251);
     --text-color: rgb(243, 255, 242);
-    --background-color:#006747;
+    --background-color: #006747;
     --border-color: rgb(9, 20, 11);
     --header-shadow: rgb(2, 51, 40);
     --header-background: rgb(9, 20, 11);
@@ -34,9 +35,11 @@
     --box-shadow-color: #00110d;
   }
 }
+
 .App {
   text-align: center;
 }
+
 .Box {
   position: relative;
   width: 150px;
@@ -51,20 +54,25 @@
   font-size: 15px;
   font-weight: bold;
   color: var(--button-text-color);
+  margin-top: 20px;
 }
+
 .Box:hover {
   background: var(--button-background-hover);
-  cursor:pointer;
+  cursor: pointer;
   color: var(--button-text-color-hover);
 }
+
 .Box:active {
   transform: translateY(2px);
   background: var(--button-background-active);
   outline: none;
 }
+
 .Box:focus {
   outline: none;
 }
+
 #logo {
   position: absolute;
   width: 35px;
@@ -72,56 +80,91 @@
   left: 20px;
   top: 15px;
 }
+
 .logo-button {
   position: absolute;
-  width:35px;
+  width: 35px;
   height: 45px;
   background-color: transparent;
   left: 20px;
   top: 15px;
   border: none;
-  z-index:1;
+  z-index: 1;
   touch-action: none;
 }
+
 .logo-button:hover {
   cursor: pointer
 }
+
 .form2 {
   position: absolute;
 }
+
 .text {
   font-family: "sans-serif", consolas, monaco;
   color: var(--page-text)
 }
+.header-text {
+  font-size: 6vw;
+  width: 100px;
+}
 .header {
   height: 75px;
+  width:100%;
   background-color: var(--header-background);
   box-shadow: 3px 4px 2px var(--header-shadow);
   color: var(--text-color);
   font-family: "sans-serif", consolas, monaco;
-  font-size: 33px;
+  font-size: 6vw;
   font-weight: bold;
   margin-top: 0px;
   line-height: 75px;
+
 }
+@media (min-width: 476px) {
+  .header {
+    height: 75px;
+    background-color: var(--header-background);
+    box-shadow: 3px 4px 2px var(--header-shadow);
+    color: var(--text-color);
+    font-family: "sans-serif", consolas, monaco;
+    font-size: 33px;
+    font-weight: bold;
+    margin-top: 0px;
+    line-height: 75px;
+  }
+}
+
 .List {
   position: relative;
-  width: 540px;
-  height: 270px;
+  width: min-width;
+  height: 440px;
   background-color: var(--list-background);
   opacity: var(--list-opacity);
   border: none;
   box-shadow: 0 0 5px 0 var(--box-shadow-color);
   /*border: 1.5px solid var(--list-border-color);*/
   border-radius: 7px;
-  display: grid;
+  display: block;
   align-items: center;
   justify-content: center;
   margin: auto;
-  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
 }
+@media (min-width: 250px) {
+  .List {
+    width: min(250px);
+  }
+}
+@media (min-width: 540px) {
+  .List {
+    width: 540px;
+    height: 270px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 /* DARK MODE */
-
-

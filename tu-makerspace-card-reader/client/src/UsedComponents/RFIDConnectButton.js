@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './button.css';
 
 
 export const RFIDConnectButton = ({ handleCallBack }) => {
@@ -82,7 +83,7 @@ export const RFIDConnectButton = ({ handleCallBack }) => {
 
 
 
-    return (!isConnected ? <button onClick={_connectDevices}>connect</button> : isReading ? <>SCAN NEW CARD FIRST</> : <button onClick={() => { setIsReading(true); _readValue() }} >{`Start Card Read (SCAN NEW CARD FIRST)`}</button>)
+    return (!isConnected ? <button className="connectButton" onClick={_connectDevices}>connect</button> : isReading ? <>SCAN NEW CARD FIRST</> : <button onClick={() => { setIsReading(true); _readValue() }} >{`Start Card Read (SCAN NEW CARD FIRST)`}</button>)
 }
 
 

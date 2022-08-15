@@ -51,6 +51,10 @@ function GetMachineGroup(loc) {
         return ": Wood Shop";
       case "/printers-and-lasers":
         return ": 3D Printers and Lasers Status";
+      case "/add-user":
+        return ": Add User"
+      case "/edit-user":
+        return ": Edit User"
       default:
         return "";
     }
@@ -70,7 +74,7 @@ function App() {
     <img src={logo} id="logo"/>
     
     
-      Tulane Makerspace{GetMachineGroup(location)}</h1>
+      <h2 className="header-text">Tulane Makerspace</h2>{GetMachineGroup(location)}</h1>
     <Routes>
       <Route path="/" element = {<Home />} />
       <Route path="metal-shop-1" element = {<MachineView machineGroup="metalShop1" />} />

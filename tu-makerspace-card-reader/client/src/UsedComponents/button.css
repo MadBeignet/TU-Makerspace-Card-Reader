@@ -33,8 +33,7 @@
   }
   .connectButton {
     position: fixed;
-    bottom: 20px;
-    left: 48.5%;
+    justify-self: center;
     width:75px;
     height:25px;
     background-color: var(--mv-button-background);
