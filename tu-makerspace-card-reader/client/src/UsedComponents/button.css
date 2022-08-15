@@ -1,0 +1,52 @@
+:root {
+    --mv-default-font: "sans-serif", consolas, monaco;
+    --mv-text-color: #193D2F;
+    --mv-border-color: rgb(25, 61, 29);
+    --mv-button-background: #DEEFE5;
+    --mv-button-background-hover: #cceeda;
+    --mv-button-text-color-hover: rgb(32, 94, 40);
+    --mv-button-background-active: #bfebd1;
+    --mv-button-border-color-active: #288F65;
+    --mv-fab-tech-view-on: #ff6c84;
+    --mv-input-false-background: #DEEFE5;
+    --mv-input-false-background-hover: #cbecd9;
+    --mv-input-false-border-focus: #006747;
+    --mv-input-true-background: rgb(255, 230, 230);
+    --mv-input-true-border: rgb(255, 132, 132);
+    --mv-machine-box-border: var(--mv-border-color);
+    --mv-input-background: var(--mv-input-false-background);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --mv-text-color: rgb(233, 230, 230);
+      --mv-button-background: rgb(48, 96, 75);
+      --mv-button-background-hover: rgb(61, 117, 92);
+      --mv-button-text-color-hover: rgb(244, 242, 242);
+      --mv-button-background-active: var(--mv-button-background-hover);
+      --mv-button-border-color-active: rgb(30, 77, 56);
+      --mv-fab-tech-view-on: #cf3e56;
+      --mv-input-false-background: rgb(198, 240, 215);
+      --mv-input-false-background-hover: rgb(169, 223, 191);
+      --mv-machine-box-border: rgb(22, 45, 36);
+    }
+  }
+  .connectButton {
+    position: fixed;
+    bottom: 20px;
+    left: 48.5%;
+    width:75px;
+    height:25px;
+    background-color: var(--mv-button-background);
+    border: 1px solid var(--mv-border-color);
+    font-family: var(--mv-default-font);
+    color: var(--mv-text-color);
+    border-radius: 5px;
+  }
+  .connectButton:hover {
+    background-color: var(--mv-button-background-hover);
+  }
+  .connectButton:active {
+    background-color: var(--mv-button-background-active);
+    border-color: var(--mv-border-color-active);
+  }
