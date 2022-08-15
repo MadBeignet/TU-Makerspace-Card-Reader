@@ -31,6 +31,25 @@
     --mv-machine-box-border: rgb(22, 45, 36);
   }
 }
+.connectButton {
+  position: fixed;
+  bottom: 20px;
+  left: 48.5%;
+  width:75px;
+  height:25px;
+  background-color: var(--mv-button-background);
+  border: 1px solid var(--mv-border-color);
+  font-family: var(--mv-default-font);
+  color: var(--mv-text-color);
+  border-radius: 5px;
+}
+.connectButton:hover {
+  background-color: var(--mv-button-background-hover);
+}
+.connectButton:active {
+  background-color: var(--mv-button-background-active);
+  border-color: var(--mv-border-color-active);
+}
 .BetterTextField {
   width: 200px;
   height: 50px;

@@ -80,6 +80,9 @@ export default class EditUser2 extends React.Component {
     // only allows a valid FabTech ID to access the editing page
     // may later remove the input of a fabtech ID on the editing page and only require password (Note from bennett: instead of removing it we should just autofill)
     handleFabTechCheck(ID) {
+        console.log(ID);
+        ID = ID.replaceAll("0", "");
+        console.log(ID);
         const id = parseInt(ID,16);
         console.log(ID);
         var users = [];
