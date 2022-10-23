@@ -66,7 +66,7 @@ const App = () => {
     <div className="App">
     
     <h1 className="header">
-    <Hamburger />
+    {/* <Hamburger /> */}
     <NavLink to="/" >
       <button className="logo-button"></button>
       </NavLink>

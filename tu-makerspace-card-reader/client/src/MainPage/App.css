@@ -16,6 +16,7 @@
   --box-shadow-color-2: #40a68e;
   --global-connect-button-background: rgb(0, 77, 66);
   --global-connect-button-shadow: rgb(10, 60, 45);
+  /* --logo-button-background: rgb(23, 69, 51); */
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -37,6 +38,7 @@
     --global-connect-button-background: rgb(0, 78, 55);
     --global-connect-button-shadow: rgb(10, 72, 55);
     --global-connect-button-background-hover: rgb(9, 97, 70);
+    /* --logo-button-background: rgb(23, 69, 51); */
   }
 }
 .App {
@@ -113,7 +115,7 @@
 .List {
   position: absolute;
   width: 250px;
-  height: 1000px;
+  height: calc(100% - 75px);
   background-color: var(--list-background);
   opacity: var(--list-opacity);
   border: none;
@@ -132,7 +134,7 @@
 .global-connect-button {
   position: absolute;
   top:24px;
-  left: 100px;
+  left: 80px;
   width: 70px;
   height: 30px;
   background-color: var(--global-connect-button-background);
@@ -150,6 +152,13 @@
   transform: translateY(1px);
   outline: none;
 }
+#tapper-connect {
+  width: 90px;
+  height: 40px;
+  top:20px;
+  left: 70px;
+}
+
 /* DARK MODE */
 
 

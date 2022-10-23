@@ -79,7 +79,7 @@ export const RFIDConnectButton = ({ handleCallBack }) => {
 
 
 
-    return (!isConnected ? <button className="connect-button" id="add-user-connect" onClick={_connectDevices}>connect</button> : isReading ? <>SCAN NEW CARD FIRST</> : <button onClick={() => { setIsReading(true); _readValue() }} >{`Start Card Read (SCAN NEW CARD FIRST)`}</button>)
+    return (!isConnected ? <button className="connect-button" id="add-user-connect" onClick={_connectDevices}>connect</button> : isReading ? <>SCAN NEW CARD FIRST</> : <button onClick={() => { setIsReading(true); _readValue() }} >{`Start Card Read`}</button>)
 }
 
 
