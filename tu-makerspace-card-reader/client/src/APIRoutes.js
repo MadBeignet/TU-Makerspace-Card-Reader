@@ -1,5 +1,3 @@
-
-
 export function getUser(id) {
     return{
         method: 'get',
@@ -61,10 +59,10 @@ export function addUser(newUser) {
         url: '/api/users/'
     }
 }
-export function editUser(id, updatedUser, user, authPassword) {
+export function editUser(id, updatedUser, user) {
     return {
         method: 'put',
-        data:{updatedUser: updatedUser, user: user, authPassword: authPassword},
+        data:{updatedUser: updatedUser, user: user},
         url: '/api/users/' + id
        
     }
@@ -75,5 +73,11 @@ export function editMachine(machineId, updatedMachine, authUser) {
         data:{updatedMachine: updatedMachine, user: authUser},
         url: '/api/machines/' + machineId
       
+    }
+}
+export function getAllLogs() {
+    return {
+        method: 'get',
+        url: '/api/logs/'
     }
 }

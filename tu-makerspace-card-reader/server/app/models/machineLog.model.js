@@ -7,7 +7,7 @@ module.exports = (sequelize,Sequelize)=>{
             type: Sequelize.INTEGER
         },
         userId: {
-            type: Sequelize.INTEGER
+            type: Sequelize.STRING
         },
         userName:{
             type: Sequelize.STRING

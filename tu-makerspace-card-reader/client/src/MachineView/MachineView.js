@@ -218,6 +218,7 @@ render() {
               fabTechView={this.state.fabTechView}
               userID={this.state.currentUser.id}
               description={machine.description}
+              lastUser={machine.lastUserName}
             />
           ))}
         
@@ -249,6 +250,7 @@ class Machine extends React.Component {
       userID: props.userID,
       tagOutMessageValue: '',
       tagOutMessage: props.description || '',
+      lastUser: props.lastUser,
     };
 
     this.handleCallBack = this.handleCallBack.bind(this);

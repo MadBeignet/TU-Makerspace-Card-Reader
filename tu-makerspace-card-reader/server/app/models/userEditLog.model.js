@@ -1,7 +1,7 @@
 module.exports = (sequelize,Sequelize)=>{
     const UserEditLog = sequelize.define("userEditLog",{
         userId: {
-            type: Sequelize.INTEGER
+            type: Sequelize.STRING
         },
         userName: {
             type: Sequelize.STRING

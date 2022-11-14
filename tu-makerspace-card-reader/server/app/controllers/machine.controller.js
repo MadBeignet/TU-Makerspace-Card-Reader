@@ -247,6 +247,7 @@ exports.disableMachine = (req, res) => {
                                 machineName: machine.name,
                                 machineId: machine.id,
                                 userId: 0,
+                                userName: null,
                                 time: Date.now(),
                                 action: "Turned Off"
                             })

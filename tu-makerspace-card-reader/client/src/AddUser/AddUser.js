@@ -1,6 +1,7 @@
+//TODO: Fix AddUser so that it can edit IDs on users that lost their cards (function below is broken)
 import axios from "axios";
 import React from "react";
-import { addUser } from '../APIRoutes.js';
+import { addUser, getUserEmail, editUser } from '../APIRoutes.js';
 import './addUser.css';
 import Inputs from '../UsedComponents/Inputs.js';
 import { NavLink } from 'react-router-dom';
@@ -65,23 +66,43 @@ export default class AddUser extends React.Component {
         if (!this.state.name || !this.state.email || !this.state.splashID || !this.state.id || !this.state.authID) { 
             this.handleErrors();
         } else {
-            axios(addUser({
-                id: this.state.id,
-                name: this.state.name,
-                email: this.state.email,
-                splash: parseInt(this.state.splashID),
-                authID: this.state.authID,
-            }))
-            .then((response, error) => {
-                if (error) {
-                    console.log("Error creating user");
-                } else {
-                    console.log("User created successfully!");
-                    this.setState({
-                        successful: true,
-                    })
-                }
-            })
+            axios(getUserEmail(this.state.email))
+                .then((res, err) => {
+                    if (err) {
+                        console.log(err);
+                    } else if (res.data) {
+                        console.log(res.data);
+                        //TODO: below causes an issue "PUT, 400 Bad Request"
+                        axios(editUser(res.data.id, {id: this.state.id}, this.state.authID))
+                            .then((response, error) => {
+                                if (error) {
+                                    console.log(error);
+                                } else {
+                                    this.setState({
+                                        successful: true,
+                                    })
+                                }
+                            })
+                    } else {
+                        axios(addUser({
+                            id: this.state.id,
+                            name: this.state.name,
+                            email: this.state.email,
+                            splash: parseInt(this.state.splashID),
+                            authID: this.state.authID,
+                        }))
+                        .then((response, error) => {
+                            if (error) {
+                                console.log("Error creating user");
+                            } else {
+                                console.log("User created successfully!");
+                                this.setState({
+                                    successful: true,
+                                })
+                            }
+                        })
+                    }
+                })
             this.setState({
                 name: '',
                 email: '',

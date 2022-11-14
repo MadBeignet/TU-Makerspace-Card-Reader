@@ -1,4 +1,5 @@
 import './App.css';
+import { MachineLog } from '../MachineLogs';
 import { MachineView } from '../MachineView';
 import { AddUser } from '../AddUser';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
@@ -53,6 +54,8 @@ function GetMachineGroup(loc) {
         return ": Wood Shop";
       case "/printers-and-lasers":
         return ": 3D Printers and Lasers Status";
+      case "/machine-logs":
+        return ": Machine Logs";
       default:
         return "";
     }
@@ -84,6 +87,7 @@ const App = () => {
       <Route path="add-user" element = {<AddUser lastRFID={lastRFID} setLastRFID={setLastRFID}/>} />
       <Route path="edit-user" element = {<EditUser lastRFID={lastRFID} setLastRFID={setLastRFID}/>}/>
       <Route path="printers-and-lasers" element={<MachineView lastRFID={lastRFID} setLastRFID={setLastRFID} machineGroup="digital"/>}/>
+      <Route path="machine-logs" element={<MachineLog/>}/>
     </Routes>
     </div>
   );

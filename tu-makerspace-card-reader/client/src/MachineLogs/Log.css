@@ -1,0 +1,35 @@
+.log {
+    position: relative;
+    width: 650px;
+    height: 30px;
+    background-color: white;
+    display: table-row;
+    grid-template-columns: 200px 200px 100px 150px;
+}
+.log-box {
+    position: relative;
+    height: 30px;
+    background-color: gray;
+    color: black;
+    border: 1px solid black;
+    display: table-cell;
+    overflow: auto;
+    vertical-align: middle;
+    
+
+}
+#index-box {
+    width:80px; 
+}
+#machine-name-box {
+    width: 200px;
+}
+#user-name-box {
+    width: 200px;
+}
+#action-box {
+    width: 100px;
+}
+#time-box {
+    width: 150px;
+}

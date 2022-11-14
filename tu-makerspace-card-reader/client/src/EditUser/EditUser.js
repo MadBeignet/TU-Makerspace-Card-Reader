@@ -198,7 +198,7 @@ export default class EditUser2 extends React.Component {
                     }
                     else {
                         authID = response.data.id;
-                        axios(editUser(this.state.idINT, { [training[0]]: training[1] }, authID, this.state.authPassword))
+                        axios(editUser(this.state.idINT, { [training[0]]: training[1] }, authID))
                             .then((response, error) => {
                                 if (error) {
                                     console.log('Error editing user !');

@@ -170,7 +170,7 @@ exports.verify = (req,res)=>{
 
 // Update a user by the id in the request
 exports.update = (req, res) => {
-    if (!req.body.updatedUser || !req.body.user || !req.body.authPassword) {
+    if (!req.body.updatedUser || !req.body.user) {
         res.status(400).send({
             message: "Content can not be empty!"
         });
@@ -178,17 +178,13 @@ exports.update = (req, res) => {
     }
     const authUser = {
         id: req.body.user,
-        password: req.body.authPassword
     }
     Users.findOne({ where: { id: authUser.id } })
         .then(usera => {
-            bcrypt.compare(authUser.password, usera.password, function (err, result) {
-                if (result == true && !(req.body.admin && !usera.admin) && !(req.body.fabTech && !usera.admin) && (usera.fabTech || usera.admin)) {
                     let user = req.body.updatedUser;
                     if (req.body.updatedUser.password) {
                         user.password = bcrypt.hashSync(req.body.updatedUser.password, 10);
                     }
-
 
                     const id = req.params.id;
                     Users.findOne({ where: { id: id } }).then(oldUser => {
@@ -223,14 +219,6 @@ exports.update = (req, res) => {
                                 });
                             });
                     });
-                }
-                else {
-                    res.status(400).send({
-                        message: "Incorrect Password or Higher permission required!"
-                    });
-                    return;
-                }
-            })
         });
 
 };

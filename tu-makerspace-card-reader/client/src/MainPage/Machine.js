@@ -43,7 +43,7 @@ export default class Machine extends React.Component {
         <div className="MachineBoxContainer" align="center">
           <span id="otherh3-2">{this.state.machineName}</span>
           <div className={this.state.activated ? "MachineBoxBorder" : 'MachineBoxBorder-false'}>
-            <img src={this.state.image} className={this.state.activated ? "MachineBoxTrue" : "MachineBox"} />
+          <div className="tooltip-wrap"><img src={this.state.image} className={this.state.activated ? "MachineBoxTrue" : "MachineBox"} /><div className="tooltip-content">{this.state.lastUser}</div></div>
             <button className={this.state.fabTechView ? "AdminToggle" : "AdminToggleFalse"} id={this.state.taggedOut ? "tagged-out-true" : "tagged-out-false"} onClick={() => this.handleToggleTagOut()} ></button>
           </div>
           <TagOutInformation
