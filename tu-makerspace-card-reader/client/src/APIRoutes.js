@@ -75,9 +75,44 @@ export function editMachine(machineId, updatedMachine, authUser) {
       
     }
 }
-export function getAllLogs() {
-    return {
-        method: 'get',
-        url: '/api/logs/'
+export function getUserEditLogs(userId,user_Name,updatedById,updatedByName,numLogs,startFrom){ 
+    userId = userId?userId:null;
+    user_Name = user_Name?user_Name:null;
+    updatedById = updatedById?updatedById:null;
+    updatedByName = updatedByName?updatedByName:null;
+    numLogs = numLogs?numLogs:null;
+    startFrom = startFrom?startFrom:null;
+
+    return{
+        method:'post',
+        data:{
+            userId: userId,
+            user_Name: user_Name,
+            updatedById: updatedById,
+            updatedByName: updatedByName,
+            numLogs: numLogs,
+            startFrom: startFrom
+        },
+        url: '/api/logs/userEditLogs'
     }
+}
+export function getMachineLogs(machineId,userId,user_Name,numLogs,startFrom){
+    machineId = machineId?machineId:null;
+    userId = userId?userId:null;
+    user_Name = user_Name?user_Name:null;
+    numLogs = numLogs?numLogs:null;
+    startFrom = startFrom?startFrom:null;
+
+    return{
+        method:'post',
+        data:{
+            machineId: machineId,
+            userId: userId,
+            user_Name: user_Name,
+            numLogs: numLogs,
+            startFrom: startFrom
+        },
+        url: '/api/logs/machineLogs'
+    }
+
 }

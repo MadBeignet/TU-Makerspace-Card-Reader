@@ -20,6 +20,5 @@ module.exports = app => {
     
     router.get("/taggedOut/:id", machines.findAll);
 
-
     app.use('/api/machines',router);
 }

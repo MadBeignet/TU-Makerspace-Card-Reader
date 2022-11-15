@@ -34,6 +34,7 @@ const HTTPPORT = process.env.PORT || 8080;
 const HTTPSPORT= process.env.PORT || 8443;
 require("./app/routes/user.routes")(app);
 require("./app/routes/machine.routes")(app);
+require("./app/routes/logs.routes")(app);
 
 httpServer.listen(HTTPPORT, () => {
   console.log(`Server is running on port ${HTTPPORT}.`);
