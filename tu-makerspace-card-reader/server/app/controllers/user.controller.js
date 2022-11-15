@@ -186,6 +186,7 @@ exports.update = (req, res) => {
                         user.password = bcrypt.hashSync(req.body.updatedUser.password, 10);
                     }
 
+
                     const id = req.params.id;
                     Users.findOne({ where: { id: id } }).then(oldUser => {
 

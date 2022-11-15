@@ -7,7 +7,7 @@ module.exports = (sequelize,Sequelize)=>{
             type: Sequelize.STRING
         },
         updatedById: {
-            type: Sequelize.INTEGER
+            type: Sequelize.STRING
         },
         updatedByName: {
             type: Sequelize.STRING
